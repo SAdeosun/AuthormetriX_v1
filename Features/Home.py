@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.image("images_and_videos/home1.jpg")
-#st.markdown("**Citation**  \nAdeosun, SO. AuthormetriX: Automated Calculation of Individual Authors’ Non-Inflationary Credit-Allocation Schemas’ and Collaboration Metrics from a Scopus Corpus. *BioaXiv* (2025).")
+st.markdown("**Citation**  \n**Adeosun SO.** *AuthormetriX: Automated Calculation of Individual Authors’ Non-Inflationary Credit-Allocation Schemas’ and Collaboration Metrics from a Scopus Corpus.* **bioRxiv** 2025.01.19.633820; doi: https://doi.org/10.1101/2025.01.19.633820")
 st.markdown("**About**  \nAuthormetriX use, function and features are described in detail in the citation above.  \nThe main feature of AuthormetriX calculates individual authors' scholarly output based on 15 different author credit allocation schemas. It also provides collaboration metrics.  \nReview the How-to videos below to learn how to obtain the required input information from Scopus.com.")
 
 st.markdown("### How-to Videos")

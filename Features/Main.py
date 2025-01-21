@@ -4,7 +4,7 @@ import pandas as pd
 
 
 st.image("images_and_videos/main1.jpg")
-#st.markdown("**Citation**  \nAdeosun, SO. AuthormetriX: Automated Calculation of Individual Authors’ Non-Inflationary Credit-Allocation Schemas’ and Collaboration Metrics from a Scopus Corpus. *BioaXiv* (2025).")
+st.markdown("**Citation**  \n**Adeosun SO.** *AuthormetriX: Automated Calculation of Individual Authors’ Non-Inflationary Credit-Allocation Schemas’ and Collaboration Metrics from a Scopus Corpus.* **bioRxiv** 2025.01.19.633820; doi: https://doi.org/10.1101/2025.01.19.633820")
 st.markdown("**Main function**  \n*Calculates individual authors' metrics (scholarly output metrics based on 15 counting schemas, and scholarly collaboration metrics) when the user supplies a relevant corpus of publications downloaded from Scopus, and a list of authors' Scopus IDs. See the Homepage for how to obtain the needed input information.*")
 st.markdown("""<hr style="height:4px;border:none;color:#fe8100;background-color:#fe8100;" />""", unsafe_allow_html=True)
 

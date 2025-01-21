@@ -2,7 +2,7 @@ import streamlit as st
 
 st.image("images_and_videos/schema1.jpg")
 
-#st.markdown("**Citation**  \nAdeosun, SO. AuthormetriX: Automated Calculation of Individual Authors’ Non-Inflationary Credit-Allocation Schemas’ and Collaboration Metrics from a Scopus Corpus. *BioaXiv* (2025).")
+st.markdown("**Citation**  \n**Adeosun SO.** *AuthormetriX: Automated Calculation of Individual Authors’ Non-Inflationary Credit-Allocation Schemas’ and Collaboration Metrics from a Scopus Corpus.* **bioRxiv** 2025.01.19.633820; doi: https://doi.org/10.1101/2025.01.19.633820")
 st.markdown("**Schema modeler function**  \n*Models credit allocation using multiple schemas for a specified total number of authors (authorcount).*")
 
 import pandas as pd

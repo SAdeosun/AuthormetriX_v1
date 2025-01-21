@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 
 st.image("images_and_videos/authorcount1.jpg")
-#st.markdown("**Citation**  \nAdeosun, SO. AuthormetriX: Automated Calculation of Individual Authors’ Non-Inflationary Credit-Allocation Schemas’ and Collaboration Metrics from a Scopus Corpus. *BioaXiv* (2025).")
+st.markdown("**Citation**  \n**Adeosun SO.** *AuthormetriX: Automated Calculation of Individual Authors’ Non-Inflationary Credit-Allocation Schemas’ and Collaboration Metrics from a Scopus Corpus.* **bioRxiv** 2025.01.19.633820; doi: https://doi.org/10.1101/2025.01.19.633820")
 
 st.markdown("**Authorcount modeler function**  \n*Models credit allocation for two **different** total number of authors (author count), using a specified schema.*")
 
