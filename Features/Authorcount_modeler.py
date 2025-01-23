@@ -5,8 +5,10 @@ import plotly.express as px
 st.image("images_and_videos/authorcount1.jpg")
 st.markdown("**Citation**  \n**Adeosun SO.** *AuthormetriX: Automated Calculation of Individual Authors’ Non-Inflationary Credit-Allocation Schemas’ and Collaboration Metrics from a Scopus Corpus.* **bioRxiv** 2025.01.19.633820; doi: https://doi.org/10.1101/2025.01.19.633820")
 
-st.markdown("**Authorcount modeler function**  \n*Models credit allocation for two **different** total number of authors (author count), using a specified schema.*")
-
+st.markdown("**Authorcount modeler function**")
+st.write ("""
+          - Models credit allocation for two **different** total number of authors (author count), using a specified schema.
+          """)
 st.markdown("""<hr style="height:4px;border:none;color:#fe8100;background-color:#fe8100;" />""", unsafe_allow_html=True)
 st.markdown(" Select credit-allocation schema and specify two ***different*** total number of authors (author counts)")
 col1, col2, col3= st.columns([3,1,1], gap="small")

@@ -3,7 +3,10 @@ import streamlit as st
 st.image("images_and_videos/schema1.jpg")
 
 st.markdown("**Citation**  \n**Adeosun SO.** *AuthormetriX: Automated Calculation of Individual Authors’ Non-Inflationary Credit-Allocation Schemas’ and Collaboration Metrics from a Scopus Corpus.* **bioRxiv** 2025.01.19.633820; doi: https://doi.org/10.1101/2025.01.19.633820")
-st.markdown("**Schema modeler function**  \n*Models credit allocation using multiple schemas for a specified total number of authors (authorcount).*")
+st.markdown("**Schema modeler function**")
+st.write("""
+          - Models credit allocation using multiple schemas for a specified total number of authors (authorcount).
+         """)
 
 import pandas as pd
 import plotly.express as px
@@ -158,7 +161,7 @@ df_melt['Author'] = df_melt['author'].astype(str)
 schemas = df.columns.tolist()[1:]
 default_schemas = ['fractional_equal', 'arithmetic_standard', 'geometric_standard', 'harmonic_standard']
 st.write ("#####  Credit-allocation Plot")
-schemas_to_plot = st.multiselect('Select schemas to display in the plot (add from the drop down list)', schemas, default=default_schemas)
+schemas_to_plot = st.multiselect('Select 1 to 12 schemas to display in the plot (add from the drop down list)', schemas, default=default_schemas)
 
 df_melt_filtered = df_melt[df_melt['Schema'].isin(schemas_to_plot)]
 fig = px.line(df_melt_filtered, x='Author', y='Credit_allocated', color='Schema', markers = True)
