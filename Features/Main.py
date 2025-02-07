@@ -410,6 +410,7 @@ if raw_corpus is not None:
     
     
     st.write (scids_df)
+    st.markdown('*To download the results, hover on the table and click the download button at the top right corner of the table.*')
 
 
     st.markdown("""<hr style="height:4px;border:none;color:#fe8100;background-color:#fe8100;" />""", unsafe_allow_html=True)
