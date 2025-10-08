@@ -353,9 +353,9 @@ if raw_corpus is not None:
   
   
   #THIS WAS JUST FOR DEBUGGING, BUT EVERYTHING WORKS FINE; perhaps I'll just keep this feature in the code for now
-  show_pre-processed_corpus = st.toggle ("Toggle to preview pre-processed corpus")  
-  if show_pre_processed_corpus:
-    st.write(corpus)
+  #show_pre-processed_corpus = st.toggle ("Toggle to preview pre-processed corpus")  
+  #if show_pre_processed_corpus:
+    #st.write(corpus)
 
   st.markdown("""<hr style="height:4px;border:none;color:#fe8100;background-color:#fe8100;" />""", unsafe_allow_html=True)
   
