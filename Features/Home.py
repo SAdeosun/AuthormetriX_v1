@@ -11,6 +11,11 @@ st.write("""
          - Review the How-to videos below to learn how to obtain the required input information from Scopus.com.
          """,unsafe_allow_html=True)
 
+st.markdown("**Update notes**")
+st.write("""
+         - [02/18/2026] A new schema, "harmonic with last author bump" (harmonic_LAB) added to the main calculator and both modelers.
+         """,unsafe_allow_html=True)
+
 st.markdown("### How-to Videos")
 st.markdown("""<hr style="height:4px;border:none;color:#fe8100;background-color:#fe8100;" />""", unsafe_allow_html=True)
 
