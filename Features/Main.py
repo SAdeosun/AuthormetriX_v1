@@ -188,7 +188,28 @@ def calculate_arithmetic_and_geometric_credit_schemes (corpus):
 
   return corpus
 
+  #99999_NEW HARMONIC_LAB MODEL
+  def calculate_harmonic_lab(n):
+    if n == 1:
+      return [1.0]
+    elif n == 2:
+      return [0.5659, 0.4341]
+    else:
+      # Calculate harmonic credits for middle authors
+      credits = [1 / i for i in range(1, n)]
+      penultimate = credits[-1]
+      # Compute the un-normalized credit for the last author using the formula
+      last_author_credit = penultimate * (((n-2)*0.5226)+0.5643)
+      credits.append(last_author_credit)
+      # Normalize middle author credits
+      total = sum(credits)
+      normalized_credits = [cred / total for cred in credits]
 
+      return normalized_credits
+
+  corpus['harmonic_lab_credit'] = corpus['authorcount'].apply(calculate_harmonic_lab)
+
+  return corpus
 
 
 
@@ -393,7 +414,8 @@ if raw_corpus is not None:
     ('geometric_credit_adaptive', 'geometric_adaptive'),
     ('harmonic_credit_STD', 'harmonic_standard'),
     ('harmonic_credit_FLAE', 'harmonic_FLAE'),
-    ('harmonic_credit_PAR', 'harmonic_parabolic')
+    ('harmonic_credit_PAR', 'harmonic_parabolic'),
+    ('harmonic_lab_credit', 'harmonic_LAB') #99999_NEW HARMONIC_LAB MODEL
     ]
 
     scids_df = Multiplex_extract_allocation_sum (corpus, scids_df, column_pairs)
