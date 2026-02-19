@@ -121,6 +121,22 @@ def calculate_golden_share(n):
     credits_gold_last = [0.618**(2*(n)-2)]
     return credits_gold + credits_gold_last
 
+def calculate_harmonic_LAB(n):
+    if n == 1:
+      return  [1]
+    elif n == 2:
+      return [0.5659, 0.4341]
+    
+    credits_LAB = [1 / i  for i in range(1, n)]
+    penultimate = credits_LAB[-1]
+    last_author_credit = penultimate * (((n-2)*0.5226)+0.5643)
+    credits_LAB.append(last_author_credit)
+    total_credits_LAB = sum(credits_LAB)
+    normalized_credits_LAB = [cred / total_credits_LAB for cred in credits_LAB]
+    
+    return normalized_credits_LAB
+
+
 
 
 def model_credit_allocations (n):
@@ -137,6 +153,7 @@ def model_credit_allocations (n):
   df['harmonic_standard'] = calculate_harmonic_standard(n)
   df['harmonic_FLAE'] = calculate_harmonic_FLAE(n)
   df['harmonic_parabolic'] = calculate_harmonic_parabolic(n)
+  df['harmonic_LAB'] = calculate_harmonic_LAB(n)
   
   
   
