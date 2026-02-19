@@ -16,7 +16,7 @@ col1, col2, col3= st.columns([3,1,1], gap="small")
 schema = col1.selectbox("Credit-allocation schema", [
    'fractional_equal', 'fractional_LAE', 'fractional_FAE', 'fractional_FLAE', 
    'arithmetic_standard', 'arithmetic_V', 'golden_share','geometric_standard', 'geometric_adaptive', 
-   'harmonic_standard', 'harmonic_FLAE','harmonic_parabolic', 
+   'harmonic_standard', 'harmonic_FLAE','harmonic_parabolic', 'harmonic_LAB'
    ])
 n1 = col2.number_input("Author count 1", min_value=2, max_value=50, value=2)
 n2 = col3.number_input("Author count 2", min_value=2, max_value=50, value=2)
@@ -153,6 +153,21 @@ def calculate_golden_share(n):
     return pd.DataFrame ({'author': authors, f'authorcount_{n}': credits})
 
 
+#Harmonic_LAB
+def calculate_harmonic_LAB(n):
+    if n == 1:
+      return pd.DataFrame ({'author': [1], f'authorcount_{n}': [1.0]})
+    elif n == 2:
+      return pd.DataFrame ({'author': [1, 2], f'authorcount_{n}': [0.5659, 0.4341]})
+    authors = [ i+1 for i in range (n)]
+    credits_LAB = [1 / i  for i in range(1, n)]
+    penultimate = credits_LAB[-1]
+    last_author_credit = penultimate * (((n-2)*0.5226)+0.5643)
+    credits_LAB.append(last_author_credit)
+    total_credits_LAB = sum(credits_LAB)
+    normalized_credits_LAB = [cred / total_credits_LAB for cred in credits_LAB]
+    credits = normalized_credits_LAB
+    return pd.DataFrame ({'author': authors, f'authorcount_{n}': credits})
 
 
 #calculating credits for selected specified authorcount 1, based on selected schema
@@ -180,6 +195,8 @@ elif schema == 'harmonic_FLAE':
   df1 = calculate_harmonic_FLAE(n1)
 elif schema == 'golden_share':
   df1 = calculate_golden_share(n1)
+elif schema == 'harmonic_LAB':
+  df1 = calculate_harmonic_LAB(n1)
 
 
 
@@ -208,6 +225,8 @@ elif schema == 'harmonic_FLAE':
   df2 = calculate_harmonic_FLAE(n2)
 elif schema == 'golden_share':
   df2 = calculate_golden_share(n2)
+elif schema == 'harmonic_LAB':
+  df2 = calculate_harmonic_LAB(n2)
 
 
 if n1 == n2:
