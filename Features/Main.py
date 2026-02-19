@@ -291,7 +291,7 @@ def calculate_collaborations_DC_CI_CC (corpus, scids_df):
   #scids_df['scids'] = scids_df['scids'].astype(int) scids are already integer froms
   scids_df['collaboration_index'] = [corpus[(corpus['Authors_ID_list']
                                              .apply(lambda x: person in x)) & (corpus['authorcount'] > 1)]['authorcount'].mean() for person in scids_df['scids']]
-  scids_df['collaboration_coefficient'] = (1 - (scids_df['fractional_equal']/scids_df['whole_fullcount']))#.fillna(0)
+  scids_df['collaborative_coefficient'] = (1 - (scids_df['fractional_equal']/scids_df['whole_fullcount']))#.fillna(0)
   #Is it better for these metrics to be just NaN rather than 0, for individuals who have zero publications? NaN seems reasonable as there is no collaboration when there is no publication.
   return scids_df
 
@@ -302,8 +302,8 @@ def find_unique_coauthors (corpus, scids_df):
   scids_df['all_coauthors_(list)'] = [[coauthor for sublist in corpus[corpus['Authors_ID_list'].apply(lambda x: person in x)]['Authors_ID_list'] for coauthor in sublist] for person in scids_df['scids']]
   scids_df['unique_coauthors_(set)'] = scids_df['all_coauthors_(list)'].apply(lambda x: set(x))
   scids_df['number_of_unique_COauthors_temp'] = scids_df['unique_coauthors_(set)'].apply(lambda x: len(x)-1)
-  #To avoid negative values for authors with no coauthors (i.e all papers are sigle-authored)
-  scids_df['number_of_unique_COauthors'] = scids_df['number_of_unique_COauthors_temp'].apply(lambda x: 0 if x < 0 else x)
+  #To avoid negative values for authors with no coauthors (i.e all papers are single-authored)
+  scids_df['unique_COauthors'] = scids_df['number_of_unique_COauthors_temp'].apply(lambda x: 0 if x < 0 else x)
   scids_df = scids_df.drop (columns = ['all_coauthors_(list)', 'unique_coauthors_(set)', 'number_of_unique_COauthors_temp'], axis = 1)
   return scids_df
 
@@ -353,15 +353,15 @@ if raw_corpus is not None:
   
   
   #THIS WAS JUST FOR DEBUGGING, BUT EVERYTHING WORKS FINE; perhaps I'll just keep this feature in the code for now
-  if st.button ("Preview pre-processed corpus"):
-    st.write(corpus)
-
-  st.markdown("""<hr style="height:4px;border:none;color:#fe8100;background-color:#fe8100;" />""", unsafe_allow_html=True)
+  #show_pre-processed_corpus = st.toggle ("Toggle to preview pre-processed corpus")  
+  #if show_pre_processed_corpus:
+  #  st.write(corpus)
+  #st.markdown("""<hr style="height:4px;border:none;color:#fe8100;background-color:#fe8100;" />""", unsafe_allow_html=True)
   
   
   #STEP 3 STARTS
   st.markdown ("### STEP 3")
-  st.markdown ("**Upload the csv file with the list of author Scopus IDs to be analysed. <u>IDs must be in the first column of the worksheet; only one ID per row.**</u>" ,unsafe_allow_html=True)
+  st.markdown ("**Upload the csv file with the list of author Scopus IDs to be analysed. <u>Put column names in the first row; IDs must be in the first column of the worksheet; only one ID per row.**</u>" ,unsafe_allow_html=True)
   scids_df = st.file_uploader (".", type = [".csv"])
   
   
