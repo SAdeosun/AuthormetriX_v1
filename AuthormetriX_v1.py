@@ -15,18 +15,18 @@ AuthormetriX = st.Page(
     icon  = ":material/analytics:", 
 )
 
-AuthormetriX_authorcount_modeler = st.Page(
-    page = "Features/Authorcount_modeler.py",
-    title = "Authorcount modeler",
+Credit_calculator_by_author_count = st.Page(
+    page = "Features/Credit_calculator_by_author_count.py",
+    title = "Credit Calculator by Author Count",
     icon  = ":material/group_add:",
 )
     
-AuthormetriX_schema_modeler = st.Page(
-    page = "Features/Schema_modeler.py",
-    title = "Schema modeler",
+Credit_calculator_by_schema = st.Page(
+    page = "Features/Credit_calculator_by_schema.py",
+    title = "Credit Calculator by Schema",
     icon  = ":material/modeling:",
 )
 
-pg = st.navigation(pages=[Home, AuthormetriX, AuthormetriX_authorcount_modeler, AuthormetriX_schema_modeler ])
+pg = st.navigation(pages=[Home, AuthormetriX, Credit_calculator_by_author_count, Credit_calculator_by_schema ])
 pg.run()
 
