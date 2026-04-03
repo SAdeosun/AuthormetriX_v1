@@ -7,7 +7,7 @@ st.markdown("**Citation**  \n**Adeosun SO.** *AuthormetriX: Automated Calculatio
 
 st.markdown("**Credit calculator by author count**")
 st.write ("""
-          - Calculates credit for two **different** inputs of total number of authors (author counts), according to a specified schema.
+          - Calculates credits for two **different** inputs of total number of authors (author counts), according to a specified schema.
           """)
 st.markdown("""<hr style="height:4px;border:none;color:#fe8100;background-color:#fe8100;" />""", unsafe_allow_html=True)
 st.markdown(" Select credit-allocation schema and specify two ***different*** total number of authors (author counts)")
