@@ -14,6 +14,7 @@ st.write("""
 st.markdown("**Update notes**")
 st.write("""
          - [02/18/2026] A new schema, "harmonic with last author bump" (harmonic_LAB) added to the main calculator and both modelers.
+         - [04/03/2026] The 2 additional features renamed to Credit calculator by author count & Credit calculator by schema.
          """,unsafe_allow_html=True)
 
 st.markdown("### How-to Videos")

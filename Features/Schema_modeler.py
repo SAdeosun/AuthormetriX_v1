@@ -3,9 +3,9 @@ import streamlit as st
 st.image("images_and_videos/schema1.jpg")
 
 st.markdown("**Citation**  \n**Adeosun SO.** *AuthormetriX: Automated Calculation of Individual Authors’ Non-Inflationary Credit-Allocation Schemas’ and Collaboration Metrics from a Scopus Corpus.* **bioRxiv** 2025.01.19.633820; doi: https://doi.org/10.1101/2025.01.19.633820")
-st.markdown("**Schema modeler function**")
+st.markdown("**Credit calculator by schema**")
 st.write("""
-          - Models credit allocation using multiple schemas for a specified total number of authors (authorcount).
+          - Calculates credits according to one or multiple inputs of schema(s) for a specified total number of authors (author count).
          """)
 
 import pandas as pd
