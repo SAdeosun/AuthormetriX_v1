@@ -13,7 +13,7 @@ st.write("""
 
 st.markdown("**Update notes**")
 st.write("""
-         - [06/20/2026] Peer-reviwed publication added; bioRxiv pre-print publication details removed (except for link). 
+         - [06/20/2026] Peer-reviewed publication added; bioRxiv pre-print publication details removed (except for link). 
          - [04/03/2026] The 2 additional features renamed to Credit calculator by author count & Credit calculator by schema.
          - [02/18/2026] A new schema, "harmonic with last author bump" (harmonic_LAB) added to the main function and the 2 credit calculators (by schema & by author count).
          """,unsafe_allow_html=True)
