@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.image("images_and_videos/home1.jpg")
-st.markdown("**Citation**  \n**Adeosun SO.** *AuthormetriX: Automated Calculation of Individual Authors’ Non-Inflationary Credit-Allocation Schemas’ and Collaboration Metrics from a Scopus Corpus.* **bioRxiv** 2025.01.19.633820; doi: https://doi.org/10.1101/2025.01.19.633820")
+st.markdown("**Citation**  \n**Adeosun SO.** *AuthormetriX: automated calculation of authors’ scholarly output based on multiple non-inflationary author credit-allocation schemas, and collaboration metrics from a scopus corpus.* **Journal of Informetrics** 20.3 (2026): 101817; doi: https://doi.org/10.1016/j.joi.2026.101817 (Preprint: **bioRxiv** 2025.01.19.633820; doi: https://doi.org/10.1101/2025.01.19.633820)")
 #st.markdown("**About**  \nAuthormetriX use, function and features are described in detail in the citation above.  \nThe main feature of AuthormetriX calculates individual authors' scholarly output based on 15 different author credit allocation schemas. It also provides collaboration metrics.  \nClick the '>' button on the top left corner of this page to reveal the navigation bar containing the tabs to the other pages and functions of AuthormetriX.  \nReview the How-to videos below to learn how to obtain the required input information from Scopus.com.")
 st.markdown("**About**")
 st.write("""
@@ -13,8 +13,9 @@ st.write("""
 
 st.markdown("**Update notes**")
 st.write("""
-         - [02/18/2026] A new schema, "harmonic with last author bump" (harmonic_LAB) added to the main function and the 2 credit calculators (by schema & by author count).
+         - [06/20/2026] Peer-reviwed publication added; bioRxiv pre-print publication details removed (except for link). 
          - [04/03/2026] The 2 additional features renamed to Credit calculator by author count & Credit calculator by schema.
+         - [02/18/2026] A new schema, "harmonic with last author bump" (harmonic_LAB) added to the main function and the 2 credit calculators (by schema & by author count).
          """,unsafe_allow_html=True)
 
 st.markdown("### How-to Videos")
